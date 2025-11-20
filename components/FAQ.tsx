@@ -4,11 +4,11 @@ import { Plus, Minus } from 'lucide-react';
 const faqs = [
   {
     question: "Como funcionam as 3 sessões grátis?",
-    answer: "É um presente exclusivo da Clínica Sorelle. Você escolhe uma das áreas participantes (Axila, Buço ou Faixa de Barba) e ganha o tratamento inicial completo para conhecer nossa tecnologia e atendimento, totalmente sem custos."
+    answer: "É um presente exclusivo da Clínica Sorelle. Você escolhe uma das áreas participantes (Axila, Buço ou Faixa de Barba) e ganha o tratamento inicial com 3 sessões, para conhecer nossa tecnologia e atendimento, totalmente sem custos."
   },
   {
     question: "O laser dói?",
-    answer: "Trabalhamos com tecnologia de ponta que possui ponteira resfriada (Cryo), tornando a aplicação muito confortável e praticamente indolor, além de proteger a sua pele."
+    answer: "Trabalhamos com tecnologia de ponta que possui ponteira resfriada (-9 graus), tornando a aplicação muito confortável e praticamente indolor, além de proteger a sua pele."
   },
   {
     question: "Quantas sessões são necessárias?",
