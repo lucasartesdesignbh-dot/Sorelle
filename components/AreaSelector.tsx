@@ -1,6 +1,6 @@
 import React from 'react';
 import { BodyArea } from '../types';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, Sparkles, Smile, User } from 'lucide-react';
 
 interface AreaSelectorProps {
   selectedArea: BodyArea | null;
@@ -14,24 +14,27 @@ const AreaSelector: React.FC<AreaSelectorProps> = ({ selectedArea, onSelect }) =
       label: 'Feminino',
       title: 'Axilas',
       desc: 'Livre-se dos pêlos indesejados e clareie a região.',
-      // Image: Woman raising arm / smooth underarm
-      img: 'https://images.unsplash.com/photo-1541535508458-9407416f5d5f?q=80&w=500&auto=format&fit=crop' 
+      icon: Sparkles,
+      // Imagem fornecida para axilas
+      imageUrl: 'https://media.istockphoto.com/id/935751700/pt/foto/close-up-of-female-armpit.jpg?s=612x612&w=0&k=20&c=nn7uyA6WgpDQGuC1RUbs26AtuwJu7wqfNKKRINvQ98I='
     },
     { 
       id: BodyArea.BUCO, 
       label: 'Feminino',
       title: 'Buço',
       desc: 'Pele lisinha e rosto mais harmônico sem dor.',
-      // Image: Close up of female face/lips
-      img: 'https://images.unsplash.com/photo-1587776539483-9b95821155cb?q=80&w=500&auto=format&fit=crop' 
+      icon: Smile,
+      // Imagem fornecida para buço
+      imageUrl: 'https://blog.creamy.com.br/wp-content/uploads/2022/02/depilacao-do-buco2.jpg'
     },
     { 
       id: BodyArea.BARBA, 
       label: 'Masculino',
       title: 'Faixa de Barba',
       desc: 'Definição perfeita e fim da foliculite.',
-      // Image: Man with beard
-      img: 'https://images.unsplash.com/photo-1621600411688-4be93cd68504?q=80&w=500&auto=format&fit=crop' 
+      icon: User,
+      // Imagem fornecida para barba
+      imageUrl: 'https://blog.newoldman.com.br/wp-content/uploads/2024/08/Cuidados-Com-a-Barba-2.png'
     },
   ];
 
@@ -41,39 +44,54 @@ const AreaSelector: React.FC<AreaSelectorProps> = ({ selectedArea, onSelect }) =
         <button
           key={area.id}
           onClick={() => onSelect(area.id)}
-          className={`relative group overflow-hidden rounded-2xl transition-all duration-300 border-2 text-left h-full min-h-[320px] flex flex-col
+          className={`relative group overflow-hidden rounded-2xl transition-all duration-300 border-2 text-left h-full min-h-[320px] flex flex-col bg-white
             ${selectedArea === area.id 
-              ? 'border-sorelle-gold shadow-2xl scale-[1.02] ring-2 ring-sorelle-gold/20' 
-              : 'border-transparent shadow-lg hover:shadow-xl hover:-translate-y-1 bg-white'
+              ? 'border-sorelle-gold shadow-xl scale-[1.02] ring-2 ring-sorelle-gold/20' 
+              : 'border-transparent shadow-lg hover:shadow-xl hover:-translate-y-1'
             }`}
         >
-          <div className="relative h-48 w-full overflow-hidden shrink-0">
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
-            <img 
-              src={area.img} 
-              alt={area.title}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            />
+          {/* Aumentei a altura da área da imagem para h-48 para destacar mais */}
+          <div className={`relative h-48 w-full shrink-0 flex items-center justify-center transition-colors duration-500 overflow-hidden bg-gray-100`}>
+            
+            {area.imageUrl ? (
+               <img 
+                 src={area.imageUrl} 
+                 alt={area.title}
+                 className={`w-full h-full object-cover transition-transform duration-700
+                    ${selectedArea === area.id ? 'scale-110 opacity-100' : 'group-hover:scale-110 opacity-90'}`}
+               />
+            ) : (
+                <area.icon 
+                className={`w-16 h-16 transition-all duration-500
+                    ${selectedArea === area.id ? 'text-sorelle-gold scale-110' : 'text-sorelle-dark/30 group-hover:text-sorelle-dark/50 group-hover:scale-110'}`} 
+                strokeWidth={1.5}
+                />
+            )}
+            
             <div className="absolute top-3 left-3 z-20">
-                 <span className="bg-white/90 backdrop-blur text-sorelle-dark text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                 <span className={`text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider shadow-sm transition-colors
+                   ${selectedArea === area.id ? 'bg-sorelle-gold text-white' : 'bg-white/90 text-gray-600 backdrop-blur-sm'}`}>
                     {area.label}
                  </span>
             </div>
+            
             {selectedArea === area.id && (
-              <div className="absolute inset-0 z-20 flex items-center justify-center bg-sorelle-gold/40 backdrop-blur-[2px]">
-                <CheckCircle2 className="w-12 h-12 text-white drop-shadow-lg animate-bounce" />
+              <div className="absolute bottom-3 right-3 z-20 animate-in fade-in zoom-in duration-300">
+                <div className="bg-white rounded-full p-1 shadow-sm">
+                   <CheckCircle2 className="w-5 h-5 text-sorelle-gold" />
+                </div>
               </div>
             )}
           </div>
           
-          <div className="p-4 bg-white relative z-10 flex flex-col flex-grow justify-between">
+          <div className="p-5 flex flex-col flex-grow justify-between">
             <div>
-              <h3 className="font-serif text-xl font-bold text-gray-800 mb-1">{area.title}</h3>
-              <p className="text-gray-600 text-xs leading-relaxed">{area.desc}</p>
+              <h3 className="font-serif text-xl font-bold text-gray-800 mb-2">{area.title}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">{area.desc}</p>
             </div>
             
-            <div className={`mt-3 w-full py-2 rounded text-center font-bold text-xs transition-colors uppercase tracking-wide
-              ${selectedArea === area.id ? 'bg-sorelle-gold text-white' : 'bg-gray-100 text-gray-500 group-hover:bg-sorelle-gold group-hover:text-white'}`}>
+            <div className={`mt-4 w-full py-2.5 rounded-lg text-center font-bold text-xs transition-colors uppercase tracking-wide
+              ${selectedArea === area.id ? 'bg-sorelle-gold text-white' : 'bg-gray-50 text-gray-400 group-hover:bg-sorelle-gold group-hover:text-white'}`}>
               {selectedArea === area.id ? 'Selecionado' : 'Quero este'}
             </div>
           </div>

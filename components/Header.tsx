@@ -21,26 +21,12 @@ export const Header: React.FC = () => {
     >
       <div className="container mx-auto px-6 flex justify-center md:justify-between items-center">
         <div className="flex items-center gap-2">
+           {/* Logo Atualizado - Tamanho aumentado 3x */}
            <img 
-             src="/logo.png" 
+             src="https://static.wixstatic.com/media/775113_c7691fec6e9b405c88d8a9b80c26a3ca~mv2.png" 
              alt="Clínica Sorelle" 
-             className="h-12 md:h-16 w-auto object-contain"
-             onError={(e) => {
-               // Fallback if image fails to load
-               e.currentTarget.style.display = 'none';
-               e.currentTarget.nextElementSibling?.classList.remove('hidden');
-               e.currentTarget.nextElementSibling?.classList.add('flex');
-             }}
+             className="h-28 md:h-44 w-auto object-contain block"
            />
-           {/* Fallback text in case logo image is missing */}
-           <div className="hidden flex-col justify-center">
-              <h1 className="font-serif text-2xl font-bold text-sorelle-dark leading-none">
-                Sorelle
-              </h1>
-              <span className="text-[0.5rem] tracking-widest uppercase text-sorelle-gold">
-                Clínica de Estética
-              </span>
-           </div>
         </div>
         
         <div className="hidden md:flex items-center gap-6 text-sm font-semibold text-gray-600">

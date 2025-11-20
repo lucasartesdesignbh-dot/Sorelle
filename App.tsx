@@ -3,8 +3,9 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import AreaSelector from './components/AreaSelector';
 import LeadForm from './components/LeadForm';
+import { FAQ } from './components/FAQ';
 import { BodyArea, UserFormData } from './types';
-import { Gift, Check, Star, ShieldCheck, Clock } from 'lucide-react';
+import { Gift, Check, ShieldCheck, Clock } from 'lucide-react';
 
 const WHATSAPP_NUMBER = '5531972380101';
 
@@ -158,6 +159,8 @@ function App() {
             </div>
           </section>
         )}
+        
+        <FAQ />
         
       </main>
       <Footer />
