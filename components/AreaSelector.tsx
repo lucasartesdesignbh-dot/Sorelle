@@ -11,7 +11,7 @@ const AreaSelector: React.FC<AreaSelectorProps> = ({ selectedArea, onSelect }) =
   const areas = [
     { 
       id: BodyArea.AXILA, 
-      label: 'Feminino',
+      label: 'Feminino e Masculino',
       title: 'Axilas',
       desc: 'Livre-se dos pêlos indesejados e clareie a região.',
       icon: Sparkles,
