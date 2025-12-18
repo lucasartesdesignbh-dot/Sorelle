@@ -31,6 +31,12 @@ const LeadForm: React.FC<LeadFormProps> = ({ onSubmit }) => {
       return;
     }
     setError('');
+    
+    // Dispara o evento de Lead do Pixel se estiver disponível
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'Lead');
+    }
+
     onSubmit({ name, phone });
   };
 

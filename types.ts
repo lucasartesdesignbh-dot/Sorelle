@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 export enum BodyArea {
@@ -11,8 +12,18 @@ export interface UserFormData {
   phone: string;
 }
 
-export interface FeatureItem {
+export interface Service {
+  id: string;
   title: string;
   description: string;
-  icon: React.ReactNode;
+  fullDescription: string;
+  imageUrl: string;
+}
+
+export type ViewState = 'home' | 'promotion' | { type: 'detail', serviceId: string };
+
+declare global {
+  interface Window {
+    fbq: any;
+  }
 }
