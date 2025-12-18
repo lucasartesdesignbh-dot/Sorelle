@@ -65,7 +65,7 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ service, o
                   'Tecnologia de última geração',
                   'Profissionais altamente qualificados',
                   'Atendimento personalizado e exclusivo',
-                  'Ambiente luxuoso e confortável na Savassi'
+                  'Ambiente climatizado e confortável na Savassi'
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3 text-gray-700 font-medium">
                     <CheckCircle className="w-5 h-5 text-sorelle-gold shrink-0" />

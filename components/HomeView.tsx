@@ -76,17 +76,27 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
                 key={service.id}
                 className="group relative bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-700 border border-gray-100 flex flex-col h-full"
               >
-                <div className="h-72 overflow-hidden relative">
+                <div 
+                  className="h-72 overflow-hidden relative cursor-pointer"
+                  onClick={() => onNavigate({ type: 'detail', serviceId: service.id })}
+                >
                   <img 
                     src={service.imageUrl} 
                     alt={service.title}
                     className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                    <span className="text-white font-bold tracking-widest text-xs uppercase bg-sorelle-gold/80 px-4 py-2 rounded-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                      Ver detalhes
+                    </span>
+                  </div>
                 </div>
                 
                 <div className="p-10 flex flex-col flex-grow">
-                  <h3 className="font-serif text-2xl font-bold text-sorelle-dark mb-4">
+                  <h3 
+                    className="font-serif text-2xl font-bold text-sorelle-dark mb-4 cursor-pointer hover:text-sorelle-gold transition-colors"
+                    onClick={() => onNavigate({ type: 'detail', serviceId: service.id })}
+                  >
                     {service.title}
                   </h3>
                   <p className="text-gray-500 text-sm leading-relaxed mb-8 flex-grow">

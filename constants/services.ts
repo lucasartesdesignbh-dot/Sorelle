@@ -14,7 +14,7 @@ export const SERVICES: Service[] = [
     title: 'Limpeza de Pele',
     description: 'Remoção de impurezas e renovação celular profunda.',
     fullDescription: 'Um protocolo completo que remove cravos, impurezas e células mortas. Inclui higienização, esfoliação, extração minuciosa e máscara calmante/hidratante personalizada para seu tipo de pele.',
-    imageUrl: 'https://negociosdebeleza.beautyfair.com.br/wp-content/uploads/2022/01/limpeza-de-pele-1.png'
+    imageUrl: 'https://esteticafacialbrasilia.com.br/wp-content/uploads/2023/08/limpeza-de-pele-profunda.jpg'
   },
   {
     id: 'drenagem-linfatica',
