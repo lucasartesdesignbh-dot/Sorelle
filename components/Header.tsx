@@ -18,14 +18,14 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentView }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const whatsappLink = "https://wa.me/5531997380101?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.";
+  const whatsappLink = "https://wa.me/5531972380101?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.";
 
   return (
     <header 
       className={`fixed top-0 w-full z-50 transition-all duration-300 border-b ${
         isScrolled 
-          ? 'bg-white/95 backdrop-blur-sm py-2 shadow-md border-sorelle-gold/20' 
-          : 'bg-transparent py-4 border-transparent'
+          ? 'bg-white/95 backdrop-blur-sm py-1 shadow-md border-sorelle-gold/20' 
+          : 'bg-transparent py-2 border-transparent'
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
@@ -36,7 +36,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentView }) => {
            <img 
              src="https://static.wixstatic.com/media/775113_c7691fec6e9b405c88d8a9b80c26a3ca~mv2.png" 
              alt="Clínica Sorelle" 
-             className="h-20 md:h-28 w-auto object-contain block"
+             className="h-[120px] md:h-[168px] w-auto object-contain block"
            />
         </button>
         
@@ -71,7 +71,6 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentView }) => {
             </button>
         </div>
 
-        {/* Mobile menu simple version - only promo button */}
         <div className="md:hidden">
           <button 
             onClick={() => onNavigate('promotion')}

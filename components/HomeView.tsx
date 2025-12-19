@@ -9,7 +9,7 @@ interface HomeViewProps {
 }
 
 export const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
-  const whatsappLink = "https://wa.me/5531997380101?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.";
+  const whatsappLink = "https://wa.me/5531972380101?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.";
 
   return (
     <div className="animate-fade-in">
@@ -55,7 +55,6 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
           </div>
         </div>
 
-        {/* Floating elements for visual interest */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-30">
           <div className="w-px h-12 bg-sorelle-gold" />
         </div>
@@ -76,6 +75,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
                 key={service.id}
                 className="group relative bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-700 border border-gray-100 flex flex-col h-full"
               >
+                {/* Foto Clicável */}
                 <div 
                   className="h-72 overflow-hidden relative cursor-pointer"
                   onClick={() => onNavigate({ type: 'detail', serviceId: service.id })}
@@ -85,8 +85,8 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
                     alt={service.title}
                     className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                    <span className="text-white font-bold tracking-widest text-xs uppercase bg-sorelle-gold/80 px-4 py-2 rounded-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <span className="text-white text-[10px] font-black tracking-[0.3em] uppercase bg-sorelle-gold/90 px-6 py-3 rounded-full shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
                       Ver detalhes
                     </span>
                   </div>
@@ -135,14 +135,14 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
             </a>
 
             <a 
-              href="tel:+5531997380101" 
+              href="tel:+5531972380101" 
               className="flex flex-col items-center text-center group"
             >
               <div className="w-20 h-20 bg-sorelle-light rounded-2xl flex items-center justify-center text-sorelle-gold mb-8 group-hover:bg-sorelle-gold group-hover:text-white transition-all transform group-hover:-rotate-6">
                 <Phone className="w-10 h-10" />
               </div>
               <h4 className="font-serif font-bold text-2xl mb-3 text-sorelle-dark">Atendimento</h4>
-              <p className="text-gray-500 leading-relaxed">(31) 99738-0101<br/>Toque para ligar</p>
+              <p className="text-gray-500 leading-relaxed">(31) 97238-0101<br/>Toque para ligar</p>
             </a>
 
             <a 

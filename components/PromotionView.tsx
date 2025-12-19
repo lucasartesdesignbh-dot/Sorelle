@@ -6,7 +6,7 @@ import { FAQ } from './FAQ';
 import { BodyArea, UserFormData, ViewState } from '../types';
 import { Gift, Check, ShieldCheck, Clock, ArrowLeft } from 'lucide-react';
 
-const WHATSAPP_NUMBER = '5531997380101';
+const WHATSAPP_NUMBER = '5531972380101';
 
 interface PromotionViewProps {
   onNavigate: (view: ViewState) => void;

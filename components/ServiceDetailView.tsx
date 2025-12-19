@@ -19,12 +19,11 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ service, o
     onNavigate('home');
   };
 
-  const whatsappLink = `https://wa.me/5531997380101?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20procedimento%20de%20${encodeURIComponent(service.title)}.`;
+  const whatsappLink = `https://wa.me/5531972380101?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20procedimento%20de%20${encodeURIComponent(service.title)}.`;
 
   return (
     <div className="pt-32 pb-24 animate-fade-in bg-white min-h-screen">
       <div className="container mx-auto px-6">
-        {/* Botão VOLTAR PARA INÍCIO - Área de clique melhorada e z-index forçado */}
         <div className="mb-10 relative z-20">
           <button 
             onClick={handleBackClick}
